@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="jumbotron text-center">
+    <h1>Firebase Example</h1>
+  </div>
+
+  <div class="container">
+
+
+    <div class="row">
+      <label>Matricula:</label>
+      <input type="text" id="matricula">
+    </div>
+    <div class="row">
+      <label>Nombre:</label>
+      <input type="text" id="nombre">
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <button class="btn btn-default" id="clean">clean</button>
+        <button class="btn btn-primary" id="save">Save</button>
+      </div>
+      <div class="col-md-6">
+
+      </div>
+    </div>
+
+    <div class="row">
+        <table class="table" id="tabla_alumnos">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Matricula</th>
+              <th scope="col">Nombre</th>              
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
