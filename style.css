@@ -1,0 +1,50 @@
+.modal-content{
+    width:100%;
+  }
+
+.modal{
+    padding: 20px;
+}
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.input-asignatura
+{
+    width: 100px;
+    text-align: center; 
+    padding: 10px;
+}
+
+.input-creditos 
+{
+    width: 50px;
+    text-align: center;
+    vertical-align: 
+}
+
+.input-examen 
+{
+    width: 50px;
+    text-align: center;
+}
+
+.input-calificacion 
+{
+    width: 50px;
+    text-align: center;
+}
+
+.input-fecha
+{
+    width: 100px;
+    text-align: center;
+}
+
+.input-periodo_examen
+{
+    width: 100px;
+    text-align: center;
+}
