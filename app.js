@@ -1,6 +1,7 @@
 
 var matricula = "";
 var nombre = "";
+var del_matricula="";
 
 
 firebase.initializeApp({
@@ -20,13 +21,27 @@ $( "#save" ).click(function() {
   matricula = $('#matricula').val();
   nombre = $('#nombre').val();
   store_alumno();
+  clean_fields();
   
 });
 
-
 $( "#clean" ).click(function() {
+	clean_fields();
+});
+function clean_fields(){	
 	$('#matricula').val("");
-	$('#nombre').val("");
+	$('#nombre').val("");    
+}
+
+  $( "#delete" ).click(function() {
+	del_matricula = $('#del_matricula').val();	
+	clean_fields();
+	db.collection("alumnos").doc(del_matricula).delete().then(function() {
+		console.log("Document successfully deleted!");
+	}).catch(function(error) {
+		console.error("Error removing document: ", error);
+	});
+
   });
 
   function store_alumno(){
@@ -36,7 +51,7 @@ $( "#clean" ).click(function() {
 	    nombre: nombre	    
 	};
 	
-	db.collection("alumnos").doc($('#matricula').val()).set(docData).then(function() {
+	db.collection("alumnos").doc(matricula).set(docData).then(function() {
 	    console.log("Alumno Document successfully written!");
 	});
 }
@@ -47,7 +62,7 @@ db.collection("alumnos").onSnapshot(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
-        $('#tabla_alumnos > tbody:last-child').append('<tr><th scope="row">1</th><td>'+doc.data().matricula+'</td><td>'+doc.data().nombre+'</td></tr>');
+        $('#tabla_alumnos > tbody:last-child').append('<tr><th scope="row"></th><td>'+doc.data().matricula+'</td><td>'+doc.data().nombre+'</td></tr>');
 
 	});
 });
